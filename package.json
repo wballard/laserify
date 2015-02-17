@@ -1,0 +1,19 @@
+{
+  "name": "laserify",
+  "version": "1.0.0",
+  "description": "Turn images into laser cutter gcode",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "laserify": "./bin/laserify"
+  },
+  "author": "Will Ballard <wballard@mailframe.net>",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.9.0",
+    "colors": "^1.0.3",
+    "docopt": "^0.4.1",
+    "pngparse": "^2.0.1"
+  }
+}
