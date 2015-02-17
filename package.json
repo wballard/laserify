@@ -1,7 +1,7 @@
 {
   "name": "laserify",
   "version": "1.0.0",
-  "description": "Turn images into laser cutter gcode",
+  "description": "Turn images into laser cutter gcode for picture engraving",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
