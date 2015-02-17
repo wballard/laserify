@@ -13,7 +13,7 @@ on 0-255 for laser intensity.
       --help                All about laserify.
       --version             For your semver ponderings.
       --pixels_per_mm=PPMM  Resolution scaling [default: 20].
-      --feedrate=FEEDRATE   Laser speed, which will change based on materials and laser wattage [default: 2000].
+      --feedrate=FEEDRATE   Laser speed, which will change based on materials and laser wattage [default: 3000].
 
     Notes:
       This assumes your laser is set up metric. You can of course use a different
@@ -52,12 +52,13 @@ Laser is cutting a thing -- so there isn't really multiple color!
         console.error "#{imageData.width} x #{imageData.height} px".green
         console.error "#{imageData.width * scale} x #{imageData.height * scale} mm".green
 
-        console.log "M3"
+        console.log "G0 X0 Y0"
+        console.log "M3 S0"
 
 Oh -- coordinate systems. This will scan from the lower left and zig-zag to
 avoid the need for multiple fast travel passes.
 
-        for y in [0..imageData.height] by 1
+        for y in [1..imageData.height] by 1
           pixelY = imageData.height - y
           console.log "(line Y #{pixelY})"
           console.log "G1 F#{feedrate} Y#{y*scale}"
@@ -88,3 +89,4 @@ above, otherwise lines will be cut off as diagonals!
 
         console.log "M5"
         console.log "G0 X0 Y0"
+        console.log "M2"
